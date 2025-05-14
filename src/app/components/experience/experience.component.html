@@ -1,0 +1,181 @@
+<section id="experience" class="experience-section">
+  <div class="container">
+    <h2 class="section-title">Mes Expériences Professionnelles</h2>
+
+    <div class="timeline">
+      <!-- Expérience 1 - PFE FLESK -->
+      <div class="experience-card">
+        <div class="experience-header">
+          <h3 class="job-title">Développeur IA & Fullstack – Ste FLESK (Stage PFE)</h3>
+          <span class="experience-date">Février 2024 - Juin 2024</span>
+        </div>
+        <div class="experience-content">
+          <p class="job-description">
+            Développement d'une plateforme innovante de vente de voitures intégrant :
+          </p>
+          <ul class="achievements-list">
+  <li>Développement et intégration d'un module d'IA prédictive pour l'estimation automatique des prix des véhicules</li>
+  <li>Création d'un système intelligent de floutage automatique des plaques d'immatriculation sur les photos des véhicules</li>
+  <li>Conception d'un dashboard administratif avec visualisation et analyse des données en temps réel</li>
+  <li>Optimisation de l'expérience utilisateur avec une interface fluide et sécurisée pour les transactions</li>
+</ul>
+          <div class="tech-used">
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">NestJS</span>
+            <span class="tech-pill">Python Flask</span>
+            <span class="tech-pill">MongoDB</span>
+          </div>
+          <div class="experience-links">
+            <a href="https://gitlab.com/stage3695627/fleskcarback/-/tree/master?ref_type=heads" target="_blank" class="project-link">
+              <i class="fab fa-gitlab"></i> Backend (NestJS)
+            </a>
+            <a href="https://gitlab.com/stage3695627/fleskcar/-/tree/master?ref_type=heads" target="_blank" class="project-link">
+              <i class="fab fa-gitlab"></i> Frontend - User (React)
+            </a>
+            <a href="https://gitlab.com/stage3695627/fleskadmin/-/tree/master?ref_type=heads" target="_blank" class="project-link">
+              <i class="fab fa-gitlab"></i> Frontend - Admin (React)
+            </a>
+            <a href="https://gitlab.com/stage3695627/fleskcarmodel/-/tree/master?ref_type=heads" target="_blank" class="project-link">
+              <i class="fab fa-gitlab"></i> Modèle de Floutage (Flask)
+            </a>
+            <a href="https://gitlab.com/stage3695627/fleskcarprix/-/tree/master?ref_type=heads" target="_blank" class="project-link">
+              <i class="fab fa-gitlab"></i> Modèle de Prédiction (Flask)
+            </a>
+            <button class="screenshot-btn" (click)="toggleGallery('pfe')">
+              <i class="fas fa-images"></i> Voir les captures
+            </button>
+          </div>
+
+          <div class="gallery-container" 
+     *ngIf="activeGalleries.includes('pfe')"
+     [class.show]="activeGalleries.includes('pfe')"
+     data-gallery="pfe">
+  <div class="gallery-content">
+    <img 
+      *ngFor="let img of projectImages['pfe']" 
+      [src]="'assets/images/pfe/' + img.src" 
+      [alt]="img.alt"
+      (click)="openLightbox(img, 'pfe')"
+     
+    >
+  </div>
+</div>
+        </div>
+      </div>
+
+      <!-- Expérience 2 - Stage FLESK -->
+      <div class="experience-card">
+        <div class="experience-header">
+          <h3 class="job-title">Développeur Fullstack – Ste FLESK (Stage d'été)</h3>
+          <span class="experience-date">Juillet 2023 - Septembre 2023</span>
+        </div>
+        <div class="experience-content">
+          <p class="job-description">
+            Conception et implémentation d'une application de gestion de projets avec :
+          </p>
+        <ul class="achievements-list">
+  <li>Conception et développement d'une application web complète de gestion de projets avec système de tâches interactif (drag-and-drop)</li>
+  <li>Implémentation d'un système de notifications en temps réel utilisant WebSockets pour une collaboration efficace</li>
+  <li>Mise en place de fonctionnalités d'export des données aux formats PDF et Excel pour le reporting</li>
+  <li>Développement d'interfaces utilisateur réactives avec React.js et création d'API robustes avec NestJS</li>
+</ul>
+          <div class="tech-used">
+            <span class="tech-pill">React</span>
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">NestJS</span>
+            <span class="tech-pill">MongoDB</span>
+          </div>
+          <div class="experience-links">
+            <a href="https://gitlab.com/stage3695627/backend-stage-ete/-/tree/master?ref_type=heads" target="_blank" class="project-link">
+              <i class="fab fa-gitlab"></i> Backend (NestJS)
+            </a>
+            <a href="https://gitlab.com/stage3695627/task-manager" target="_blank" class="project-link">
+              <i class="fab fa-gitlab"></i> Frontend (React)
+            </a>
+              <button class="screenshot-btn" (click)="toggleGallery('stage')">
+              <i class="fas fa-images"></i> Voir les captures
+            </button>
+           <div class="gallery-container" 
+     *ngIf="activeGalleries.includes('stage')"
+     [class.show]="activeGalleries.includes('stage')"
+     data-gallery="stage">  
+  <div class="gallery-content">
+    <img 
+      *ngFor="let img of projectImages['stage']" 
+      [src]="'assets/images/stage/' + img.src" 
+      [alt]="img.alt"
+     (click)="openLightbox(img, 'stage')"
+      
+    >
+  </div>
+</div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Projet 1 : PFA -->
+<div class="experience-card">  <!-- Changé de project-card à experience-card -->
+  <div class="experience-header">  <!-- Changé de project-header -->
+    <h3 class="job-title">Application de sondages en ligne (Stage PFA)</h3>  <!-- Changé de project-title -->
+    <span class="experience-date">Février 2023 - Mai 2023</span>  <!-- Changé de project-date -->
+  </div>
+  <div class="experience-content">  <!-- Changé de project-content -->
+    <p class="job-description">  <!-- Changé de project-description -->
+      Plateforme complète de création et gestion d'enquêtes avec analyse des résultats en temps réel.
+    </p>
+    <ul class="achievements-list">
+      <li>Développement d'une plateforme complète de création et gestion d'enquêtes</li>
+      <li>Implémentation de divers types de questions (choix multiples, réponses libres...)</li>
+      <li>Conception d'un dashboard administrateur pour le suivi en temps réel</li>
+      <li>Architecture d'une solution fullstack avec React.js et Spring Boot</li>
+    </ul>
+    <div class="tech-used">
+      <span class="tech-pill">React</span>
+      <span class="tech-pill">Spring Boot</span>
+      <span class="tech-pill">MySQL</span>
+    </div>
+    <div class="experience-links">  <!-- Changé de project-links -->
+      <a href="https://gitlab.com/stage3695627/pfa_springboot" target="_blank" class="project-link">
+        <i class="fab fa-gitlab"></i> Backend
+      </a>
+      <a href="https://gitlab.com/stage3695627/pfa" target="_blank" class="project-link">
+        <i class="fab fa-gitlab"></i> Frontend
+      </a>
+      <button class="screenshot-btn" (click)="toggleGallery('pfa')">
+        <i class="fas fa-images"></i> Voir les captures
+      </button>
+    </div>
+    <div class="gallery-container" *ngIf="activeGalleries.includes('pfa')">
+      <div class="gallery-content">
+        <img *ngFor="let img of projectImages['pfa']" 
+             [src]="'assets/images/pfa/' + img.src" 
+             [alt]="img.alt"
+             (click)="openLightbox(img, 'pfa')">
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" *ngIf="lightboxImage" (click)="closeLightbox()">
+  <span class="lightbox-close" (click)="closeLightbox()">&times;</span>
+
+  <button class="nav-button prev" (click)="prevImage()">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+
+  <div class="lightbox-content">
+    <img [src]="lightboxImage" (click)="$event.stopPropagation()">
+    <div class="image-info">
+      <span class="image-counter">
+        {{ currentImageIndex + 1 }} / {{ projectImages[currentProject]?.length }}
+      </span>
+    </div>
+  </div>
+
+  <button class="nav-button next" (click)="nextImage()">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+</div>

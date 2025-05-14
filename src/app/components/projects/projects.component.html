@@ -1,0 +1,123 @@
+<section id="projects" class="projects-section">
+  <div class="container">
+    <h2 class="section-title">Mes Projets</h2>
+    <div class="projects-grid">
+      
+      <!-- Projet 2 : Chat -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">Application de Chat (Flutter & Firebase)</h3>
+          <span class="project-date">2023</span>
+        </div>
+        <div class="project-content">
+          <p class="project-description">
+            Messagerie instantanée avec fonctionnalités avancées et synchronisation en temps réel.
+          </p>
+          <ul class="achievements-list">
+            <li>Interface intuitive avec conversations et messages temps réel</li>
+            <li>Envoi de messages texte et images avec prévisualisation</li>
+            <li>Édition/suppression des messages avec gestion des droits</li>
+            <li>Statut utilisateur (en ligne/hors ligne) et indicateurs de lecture</li>
+            <li>Notifications push et authentification Google</li>
+          </ul>
+          <div class="tech-used">
+            <span class="tech-pill">Flutter</span>
+            <span class="tech-pill">Firebase</span>
+            <span class="tech-pill">Firestore</span>
+            <span class="tech-pill">Google Auth</span>
+          </div>
+          <div class="project-links">
+            <a href="https://gitlab.com/stage3695627/chat/-/tree/master?ref_type=heads" target="_blank" class="project-link">
+              <i class="fab fa-gitlab"></i> Code Source
+            </a>
+            <button class="screenshot-btn" (click)="toggleGallery('chat')">
+              <i class="fas fa-images"></i> Voir les captures
+            </button>
+          </div>
+          <div class="gallery-container" *ngIf="activeGalleries.includes('chat')">
+            <div class="gallery-content">
+              <img *ngFor="let img of projectImages['chat']" 
+                   [src]="'assets/images/chat/' + img.src" 
+                   [alt]="img.alt"
+                   (click)="openLightbox(img, 'chat')">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Projet 1 - Application Scolaire -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">Développeur Backend – Projet Freelance</h3>
+          <span class="project-date"> 2025</span>
+        </div>
+        <div class="project-content">
+          <p class="project-description">
+            Développement backend d'une application web complète pour une société cliente Application multi-rôles pour établissement scolaire avec :
+          </p>
+          <ul class="achievements-list">
+            <li>Architecture d'un système centralisé de gestion des notes, absences et évaluations</li>
+            <li>Développement d'un algorithme de génération automatique des plannings et emplois du temps</li>
+            <li>Création d'une interface d'examens en temps réel avec notifications instantanées</li>
+            <li>Mise en place d'un système multi-rôles (admin, professeurs, étudiants) avec permissions différenciées</li>
+          </ul>
+          <div class="tech-used">
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">Express</span>
+            <span class="tech-pill">MongoDB</span>
+            <span class="tech-pill">Socket.io</span>
+          </div>
+          <div class="project-links">
+            <span class="private-notice">
+              <i class="fas fa-lock"></i> Projet sous NDA (code non public)
+            </span>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <!-- Projet 3 : Freelance EST -->
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">Site de réservation pour l'EST - Projet Freelance</h3>
+          <span class="project-date">2025</span>
+        </div>
+        <div class="project-content">
+          <p class="project-description">
+            Frontend React pour réservation de packs touristiques avec dashboard admin.
+          </p>
+          <ul class="achievements-list">
+            <li>Application web pour agence de voyage dédiée aux supporters</li>
+            <li>Réservation de packs (hébergement, billets, transport)</li>
+            <li>Gestion des données personnelles et participants</li>
+            <li>Dashboard admin pour confirmation des réservations</li>
+          </ul>
+          <div class="tech-used">
+            <span class="tech-pill">React</span>
+          </div>
+          <div class="project-links">
+            <span class="private-notice">
+              <i class="fas fa-lock"></i> Projet sous NDA
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Lightbox -->
+<div class="lightbox" *ngIf="lightboxImage" (click)="closeLightbox()">
+  <span class="lightbox-close" (click)="closeLightbox()">&times;</span>
+  <button class="nav-button prev" (click)="prevImage()"><i class="fas fa-chevron-left"></i></button>
+  <div class="lightbox-content">
+    <img [src]="lightboxImage" (click)="$event.stopPropagation()">
+    <div class="image-info">
+      <span class="image-counter">{{ currentImageIndex + 1 }} / {{ projectImages[currentProject]?.length }}</span>
+     
+    </div>
+  </div>
+  <button class="nav-button next" (click)="nextImage()"><i class="fas fa-chevron-right"></i></button>
+</div>
