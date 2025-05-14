@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:jawhar-portfolio": "node dist/jawhar-portfolio/server/server.mjs",
-    "postbuild": "copy src\\_redirects dist\\jawhar-portfolio\\_redirects"
+   "postbuild": "cp src/_redirects dist/jawhar-portfolio/_redirects"
+
   },
   "private": true,
   "dependencies": {
