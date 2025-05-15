@@ -200,7 +200,7 @@
   transform: scale(1.03);
   box-shadow: 0 4px 12px rgba(67, 97, 238, 0.15);
 }
-
+/* Lightbox corrigée */
 .lightbox {
   position: fixed;
   top: 0;
@@ -212,14 +212,60 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
 }
 
 .lightbox-content img {
-  max-height: 75vh;
-  max-width: 85vw;
-  border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  max-height: 80vh;
+  max-width: 90vw;
+  object-fit: contain;
+}
+
+.nav-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.nav-button.prev {
+  left: 20px;
+}
+
+.nav-button.next {
+  right: 20px;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
 }
 
 .image-info {
@@ -236,11 +282,7 @@
   font-size: 0.9rem;
 }
 
-.nav-button {
-  width: 45px;
-  height: 45px;
-  font-size: 1.1rem;
-}
+
 
 @keyframes fadeIn {
   from { opacity: 0; }

@@ -7,8 +7,7 @@
   "build": "ng build --configuration=production",
   "watch": "ng build --watch --configuration development",
   "test": "ng test",
-  "serve:ssr:jawhar-portfolio": "node dist/jawhar-portfolio/server/server.mjs",
-  "postbuild": "xcopy src\\_redirects dist\\jawhar-portfolio\\ /Y"
+  "serve:ssr:jawhar-portfolio": "node dist/jawhar-portfolio/server/server.mjs"
 },
 
   "private": true,

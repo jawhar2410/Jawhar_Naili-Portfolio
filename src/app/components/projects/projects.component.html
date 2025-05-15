@@ -108,16 +108,27 @@
 </section>
 
 
-<!-- Lightbox -->
+<!-- Lightbox corrigée -->
 <div class="lightbox" *ngIf="lightboxImage" (click)="closeLightbox()">
   <span class="lightbox-close" (click)="closeLightbox()">&times;</span>
-  <button class="nav-button prev" (click)="prevImage()"><i class="fas fa-chevron-left"></i></button>
-  <div class="lightbox-content">
-    <img [src]="lightboxImage" (click)="$event.stopPropagation()">
+  
+  <button class="nav-button prev" (click)="prevImage($event)">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  
+  <div class="lightbox-content" (click)="$event.stopPropagation()">
+    <img [src]="lightboxImage">
     <div class="image-info">
-      <span class="image-counter">{{ currentImageIndex + 1 }} / {{ projectImages[currentProject]?.length }}</span>
-     
+      <span class="image-counter">
+        {{ currentImageIndex + 1 }} / {{ projectImages[currentProject]?.length }}
+      </span>
+      <span class="image-description">
+        {{ projectImages[currentProject][currentImageIndex]?.alt }}
+      </span>
     </div>
   </div>
-  <button class="nav-button next" (click)="nextImage()"><i class="fas fa-chevron-right"></i></button>
+  
+  <button class="nav-button next" (click)="nextImage($event)">
+    <i class="fas fa-chevron-right"></i>
+  </button>
 </div>

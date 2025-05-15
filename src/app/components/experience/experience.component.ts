@@ -67,7 +67,7 @@ lightboxImage: string | null = null;
     ],  
 
   };
-   toggleGallery(galleryId: string): void {
+    toggleGallery(galleryId: string): void {
     if (this.activeGalleries.includes(galleryId)) {
       this.activeGalleries = this.activeGalleries.filter(id => id !== galleryId);
     } else {
@@ -91,31 +91,40 @@ lightboxImage: string | null = null;
     const gallery = this.projectImages[project];
     this.currentImageIndex = gallery.findIndex(i => i.src === img.src);
     this.lightboxImage = `assets/images/${project}/${img.src}`;
+    document.body.style.overflow = 'hidden';
   }
 
-  nextImage(): void {
+  nextImage(event: Event): void {
+    event.stopPropagation();
     const gallery = this.projectImages[this.currentProject];
     this.currentImageIndex = (this.currentImageIndex + 1) % gallery.length;
-    this.lightboxImage = `assets/images/${this.currentProject}/${gallery[this.currentImageIndex].src}`;
+    this.updateLightboxImage();
   }
 
-  prevImage(): void {
+  prevImage(event: Event): void {
+    event.stopPropagation();
     const gallery = this.projectImages[this.currentProject];
     this.currentImageIndex = (this.currentImageIndex - 1 + gallery.length) % gallery.length;
+    this.updateLightboxImage();
+  }
+
+  private updateLightboxImage(): void {
+    const gallery = this.projectImages[this.currentProject];
     this.lightboxImage = `assets/images/${this.currentProject}/${gallery[this.currentImageIndex].src}`;
   }
 
   closeLightbox(): void {
     this.lightboxImage = null;
+    document.body.style.overflow = '';
   }
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (this.lightboxImage) {
       if (event.key === 'ArrowRight') {
-        this.nextImage();
+        this.nextImage(event);
       } else if (event.key === 'ArrowLeft') {
-        this.prevImage();
+        this.prevImage(event);
       } else if (event.key === 'Escape') {
         this.closeLightbox();
       }

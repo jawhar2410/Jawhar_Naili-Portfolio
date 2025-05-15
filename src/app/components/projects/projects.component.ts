@@ -50,39 +50,39 @@ export class ProjectsComponent {
     }, 100);
   }
 
-  openLightbox(img: GalleryImage, project: string): void {
-    this.currentProject = project;
-    const gallery = this.projectImages[project];
-    this.currentImageIndex = gallery.findIndex(i => i.src === img.src);
-    this.lightboxImage = `assets/images/${project}/${img.src}`;
-  }
+ // Dans votre composant ProjectsComponent
 
-  nextImage(): void {
-    const gallery = this.projectImages[this.currentProject];
-    this.currentImageIndex = (this.currentImageIndex + 1) % gallery.length;
-    this.lightboxImage = `assets/images/${this.currentProject}/${gallery[this.currentImageIndex].src}`;
-  }
+openLightbox(img: GalleryImage, project: string): void {
+  this.currentProject = project;
+  const gallery = this.projectImages[project];
+  this.currentImageIndex = gallery.findIndex(i => i.src === img.src);
+  this.lightboxImage = `assets/images/${project}/${img.src}`;
+  
+  // Empêche le défilement de la page quand la lightbox est ouverte
+  document.body.style.overflow = 'hidden';
+}
 
-  prevImage(): void {
-    const gallery = this.projectImages[this.currentProject];
-    this.currentImageIndex = (this.currentImageIndex - 1 + gallery.length) % gallery.length;
-    this.lightboxImage = `assets/images/${this.currentProject}/${gallery[this.currentImageIndex].src}`;
-  }
+closeLightbox(): void {
+  this.lightboxImage = null;
+  document.body.style.overflow = ''; // Rétablit le défilement
+}
 
-  closeLightbox(): void {
-    this.lightboxImage = null;
-  }
+nextImage(event: Event): void {
+  event.stopPropagation(); // Empêche la fermeture accidentelle
+  const gallery = this.projectImages[this.currentProject];
+  this.currentImageIndex = (this.currentImageIndex + 1) % gallery.length;
+  this.updateLightboxImage();
+}
 
-  @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    if (this.lightboxImage) {
-      if (event.key === 'ArrowRight') {
-        this.nextImage();
-      } else if (event.key === 'ArrowLeft') {
-        this.prevImage();
-      } else if (event.key === 'Escape') {
-        this.closeLightbox();
-      }
-    }
-  }
+prevImage(event: Event): void {
+  event.stopPropagation();
+  const gallery = this.projectImages[this.currentProject];
+  this.currentImageIndex = (this.currentImageIndex - 1 + gallery.length) % gallery.length;
+  this.updateLightboxImage();
+}
+
+private updateLightboxImage(): void {
+  const gallery = this.projectImages[this.currentProject];
+  this.lightboxImage = `assets/images/${this.currentProject}/${gallery[this.currentImageIndex].src}`;
+}
 }
