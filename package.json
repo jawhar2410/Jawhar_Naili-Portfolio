@@ -1,16 +1,16 @@
 {
   "name": "jawhar-portfolio",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:jawhar-portfolio": "node dist/jawhar-portfolio/server/server.mjs",
-   "postbuild": "cp src/_redirects dist/jawhar-portfolio/_redirects"
+"scripts": {
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build --configuration=production",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test",
+  "serve:ssr:jawhar-portfolio": "node dist/jawhar-portfolio/server/server.mjs",
+  "postbuild": "xcopy src\\_redirects dist\\jawhar-portfolio\\ /Y"
+},
 
-  },
   "private": true,
   "dependencies": {
     "@angular/common": "^19.2.0",
