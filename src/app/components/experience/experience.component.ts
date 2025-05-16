@@ -21,15 +21,16 @@ lightboxImage: string | null = null;
   
   projectImages: { [key: string]: GalleryImage[] } = {
     pfe: [
-       { src: 'Capture d\'écran 2024-05-12 165852.png', alt: 'Dashboard principal' },
-    { src: 'Capture d\'écran 2024-05-22 181859.png', alt: 'Statistiques' },
-    { src: 'Capture d\'écran 2024-05-24 204748.png', alt: "Page d'accueil" },
     { src: 'Capture d\'écran 2024-05-24 210707.png', alt: 'Page de réservation' },
+    { src: 'Capture d\'écran 2024-05-26 211451.png', alt: 'Export données' },
     { src: 'Capture d\'écran 2024-05-24 210847.png', alt: 'Gestion des véhicules' },
+    { src: 'Capture d\'écran 2024-05-24 204748.png', alt: "Page d'accueil" },
     { src: 'Capture d\'écran 2024-05-24 211202.png', alt: 'Analyse des données' },
+    { src: 'Capture d\'écran 2024-05-22 181859.png', alt: 'Statistiques' },
     { src: 'Capture d\'écran 2024-05-24 211257.png', alt: 'Détails véhicule' },
     { src: 'Capture d\'écran 2024-05-24 213205.png', alt: 'Interface admin' },
     { src: 'Capture d\'écran 2024-05-24 213243.png', alt: 'Gestion utilisateurs' },
+    { src: 'Capture d\'écran 2024-05-12 165852.png', alt: 'Dashboard principal' },
     { src: 'Capture d\'écran 2024-05-24 213725.png', alt: 'Tableau de bord' },
     { src: 'Capture d\'écran 2024-05-24 213956.png', alt: 'Statistiques ventes' },
     { src: 'Capture d\'écran 2024-05-24 214153.png', alt: 'Configuration' },
@@ -39,8 +40,7 @@ lightboxImage: string | null = null;
     { src: 'Capture d\'écran 2024-05-24 214929.png', alt: 'Prédiction prix' },
     { src: 'Capture d\'écran 2024-05-24 215717.png', alt: 'Historique' },
     { src: 'Capture d\'écran 2024-05-24 215759.png', alt: 'Notifications' },
-    { src: 'Capture d\'écran 2024-05-26 211451.png', alt: 'Export données' },
-    { src: 'pfe-dashboard.png', alt: 'Vue globale dashboard' }
+     { src: 'pfe-dashboard.png', alt: 'Vue globale dashboard' }
     ],
     stage: [
     { src: 'Capture d\'écran 2023-10-15 171423.png', alt: 'Interface projet - Vue globale' },
