@@ -45,10 +45,10 @@
         </div>
       </div>
 
-         <!-- Projet 3 : Freelance EST -->
+         <!-- Projet 3 : Freelance  -->
       <div class="project-card">
         <div class="project-header">
-          <h3 class="project-title">Site de réservation pour l'EST - Projet Freelance</h3>
+          <h3 class="project-title">Site de réservation pour le coupe du monde des clubs </h3>
           <span class="project-date">2024</span>
         </div>
         <div class="project-content">
@@ -64,18 +64,30 @@
           <div class="tech-used">
             <span class="tech-pill">React</span>
           </div>
-          <div class="project-links">
-            <span class="private-notice">
-              <i class="fas fa-lock"></i> Projet sous NDA
-            </span>
+          
+        <div class="project-links">
+            <a href="https://github.com/jawhar2410/world-cup-clubs/tree/master" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> Code Source
+            </a>
+            <button class="screenshot-btn" (click)="toggleGallery('club')">
+              <i class="fas fa-images"></i> Voir les captures
+            </button>
+          </div>
+          <div class="gallery-container" *ngIf="activeGalleries.includes('club')">
+            <div class="gallery-content">
+              <img *ngFor="let img of projectImages['club']" 
+                   [src]="'assets/images/club/' + img.src" 
+                   [alt]="img.alt"
+                   (click)="openLightbox(img, 'club')">
+            </div>
           </div>
         </div>
-      </div>
+       </div>
 
       <!-- Projet 1 - Application Scolaire -->
       <div class="project-card">
         <div class="project-header">
-          <h3 class="project-title">Développeur Backend – Projet Freelance</h3>
+          <h3 class="project-title">Développeur Backend </h3>
           <span class="project-date"> 2024</span>
         </div>
         <div class="project-content">
@@ -95,9 +107,9 @@
             <span class="tech-pill">Socket.io</span>
           </div>
           <div class="project-links">
-            <span class="private-notice">
-              <i class="fas fa-lock"></i> Projet sous NDA (code non public)
-            </span>
+             <a href="https://github.com/jawhar2410/backcompus/tree/main/app" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> Code Source
+            </a>
           </div>
         </div>
       </div>
@@ -125,9 +137,7 @@
       <span class="image-counter">
         {{ currentImageIndex + 1 }} / {{ projectImages[currentProject]?.length }}
       </span>
-      <span class="image-description">
-        {{ projectImages[currentProject][currentImageIndex]?.alt }}
-      </span>
+      
     </div>
   </div>
   

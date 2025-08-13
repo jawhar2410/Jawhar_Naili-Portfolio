@@ -28,7 +28,18 @@ export class ProjectsComponent {
     { src: 'chat4.png', alt: 'Description de l’image' },
     { src: 'chat5.png', alt: 'Description de l’image' },
     { src: 'chat6.png', alt: 'Description de l’image' }
-  ]
+  ],
+   club: [
+      { src: 'coupe1.png', alt: 'Page d\'accueil du site' },
+      { src: 'coupe2.png', alt: 'Sélection des packs' },
+      { src: 'coupe3.png', alt: 'Formulaire de réservation' },
+      { src: 'coupe4.png', alt: 'Dashboard admin' },
+      { src: 'coupe5.png', alt: 'Gestion des participants' },
+      { src: 'coupe6.png', alt: 'Gestion des participants' },
+      { src: 'coupe7.png', alt: 'Gestion des participants' },
+      { src: 'coupe8.png', alt: 'Gestion des participants' },
+      { src: 'coupe9.png', alt: 'Gestion des participants' }
+    ]
   };
 
   toggleGallery(galleryId: string): void {
